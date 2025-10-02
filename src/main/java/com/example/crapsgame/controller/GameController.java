@@ -1,28 +1,26 @@
 package com.example.crapsgame.controller;
 
+import com.example.crapsgame.model.alert.AlertBox;
+import com.example.crapsgame.model.player.Player;
+import com.example.crapsgame.view.GameStage;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.Label;
-import javafx.scene.control.TextArea;
-import javafx.scene.control.TextField;
-import javafx.scene.input.KeyEvent;
+
+import java.io.IOException;
 
 public class GameController {
-    @FXML
-    private TextField nicknameTextfield;
+    private Player player;
 
     @FXML
-    private Label welcomeLabel;
-
-    @FXML
-    public void onHandleButtonPlay(ActionEvent event) {
-        String nickname = nicknameTextfield.getText();
-        welcomeLabel.setText("Bienvenido, "+ nickname + "!");
+    void onHandleButtonPlay(ActionEvent event) {
+        String title = "Información el Juego";
+        String header = "Bienvenida";
+        String content = "Bienvenido " + player.getNickname() + ", en este juego podrás jugar de la sig. manera";
+        AlertBox alertBox = new AlertBox();
+        alertBox.showAlert(title, header, content);
     }
 
-    @FXML
-    public void onHandleKeyTextField(KeyEvent event) {
-        System.out.println(event.getText());
+    public void setPlayer(Player player) {
+        this.player = player;
     }
-
 }

@@ -1,5 +1,6 @@
 package com.example.crapsgame;
 
+import com.example.crapsgame.view.GameStage;
 import com.example.crapsgame.view.WelcomeStage;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;

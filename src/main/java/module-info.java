@@ -5,6 +5,7 @@ module com.example.crapsgame {
     requires javafx.graphics;
 
 
+
     opens com.example.crapsgame to javafx.fxml;
     opens com.example.crapsgame.controller to javafx.fxml;
 
